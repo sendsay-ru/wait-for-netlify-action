@@ -19,7 +19,7 @@ const waitForUrl = async (url, MAX_TIMEOUT) => {
 const run = async () => {
   try {
     const commit = github.context.payload.head;
-    const MAX_TIMEOUT = Number(core.getInput("site_name")) || 60;
+    const MAX_TIMEOUT = Number(core.getInput("max_timeout")) || 60;
     const siteName = core.getInput("site_name");
     if (!siteName) {
       core.setFailed("Required field `site_name` was not provided");
